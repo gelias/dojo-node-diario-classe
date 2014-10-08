@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1.
+        Estudantes
+    div
+        each estudante, i in listaestudante
+            div
+                =estudante.nome
+                a(href="/estudante/edit/#{estudante.id}")  editar
+                a(href="/estudante/deletar/#{estudante.id}")  deletar
+                

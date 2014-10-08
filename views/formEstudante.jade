@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h1= title
+    form#formAdicionarEstudante(name="adicionarestudante",method="post",action="/estudante/salvar")
+        input#inputId(type="text", placeholder="id", name="id")
+        input#inputNome(type="text", placeholder="nome", name="nome")
+        button#btnSubmit(type="submit") submit
