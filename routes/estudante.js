@@ -40,9 +40,9 @@ router.post('/salvar', function(req, res) {
         }
         else {
             // If it worked, set the header so the address bar doesn't still say /adduser
-            res.location("/listaEstudante");
+            res.location("/estudante");
             // And forward to success page
-            res.redirect("/listaEstudante");
+            res.redirect("/estudante");
         }
     });
 });
