@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1.
+        Disciplinas
+    div
+        each disciplina, i in listadisciplina
+            div
+                =disciplina.nome
+                a(href="/disciplina/edit/#{disciplina.id}")  editar
+                a(href="/disciplina/deletar/#{disciplina.id}")  deletar
+                

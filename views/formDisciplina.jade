@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h1= title
+    form#formAdicionarDisciplina(name="adicionardisciplina",method="post",action="/disciplina/salvar")
+        input#inputId(type="text", placeholder="id", name="id", value=)
+        input#inputNome(type="text", placeholder="nome", name="nome")
+        button#btnSubmit(type="submit") submit
