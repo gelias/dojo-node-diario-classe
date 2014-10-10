@@ -1,13 +1,13 @@
 extends layout
 
 block content
-    a(href="/estudante/adicionar")  adicionar
+    a(href="/diario-classe/estudante/adicionar")  adicionar
     h1.
         Estudantes
     div
         each estudante, i in listaestudante
             div
                 =estudante.nome
-                a(href="/estudante/editar/#{estudante.id}")  editar
-                a(href="/estudante/deletar/#{estudante.id}")  deletar
+                a(href="/diario-classe/estudante/editar/#{estudante.id}")  editar
+                a(href="/diario-classe/estudante/deletar/#{estudante.id}")  deletar
                 

@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
 
 router.get('/adicionar', function(req, res) {
     var doc = {id:'',nome:''};
-    res.render('formEstudante', { title: 'Adicionar Estudante', 'estudante': doc, 'action': '/estudante/salvar'});
+    res.render('formEstudante', { title: 'Adicionar Estudante', 'estudante': doc, 'action': '/diario-classe/estudante/salvar'});
 });
 
 router.get('/editar/:id', function(req, res) {
@@ -24,7 +24,7 @@ router.get('/editar/:id', function(req, res) {
     collection.find({ id: id } ,function (err,doc){
         console.log(doc);
         res.render('formEstudante', 
-        	{ 'title': 'Editar Estudante',  'estudante' : doc[0], 'action': '/estudante/update'});
+        	{ 'title': 'Editar Estudante',  'estudante' : doc[0], 'action': '/diario-classe/estudante/update'});
     });
 });
 
@@ -33,8 +33,8 @@ router.get('/deletar/:id', function(req, res) {
    var id = req.param('id');
    var collection = db.get('estudante');
    collection.remove({ "id" : { $eq: id} },function (err,docs){
-        res.location("/estudante");
-        res.redirect("/estudante");
+        res.location("/diario-classe/estudante");
+        res.redirect("/diario-classe/estudante");
     });
 });
 
@@ -54,8 +54,8 @@ router.post('/salvar', function(req, res) {
             res.send("There was a problem adding the information to the database.");
         }
         else {
-            res.location("/estudante");
-            res.redirect("/estudante");
+            res.location("/diario-classe/estudante");
+            res.redirect("/diario-classe/estudante");
         }
     });
 });
@@ -76,8 +76,8 @@ router.post('/update', function(req, res) {
             res.send("There was a problem adding the information to the database.");
         }
         else {
-            res.location("/estudante");
-            res.redirect("/estudante");
+            res.location("/diario-classe/estudante");
+            res.redirect("/diario-classe/estudante");
         }
     });
 });

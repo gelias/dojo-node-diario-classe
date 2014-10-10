@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
 
 router.get('/adicionar', function(req, res) {
     var doc = {id:'',nome:''};
-    res.render('formDisciplina', { title: 'Adicionar Disciplina', 'disciplina': doc, 'action': '/disciplina/salvar' });
+    res.render('formDisciplina', { title: 'Adicionar Disciplina', 'disciplina': doc, 'action': '/diario-classe/disciplina/salvar' });
 });
 
 router.get('/editar/:id', function(req, res) {
@@ -24,7 +24,7 @@ router.get('/editar/:id', function(req, res) {
     collection.find({ id: id } ,function (err,doc){
         console.log(doc);
         res.render('formDisciplina', 
-            { 'title': 'Editar Disciplina',  'disciplina' : doc[0], 'action': '/disciplina/update'});
+            { 'title': 'Editar Disciplina',  'disciplina' : doc[0], 'action': '/diario-classe/disciplina/update'});
     });
 });
 
@@ -33,8 +33,8 @@ router.get('/deletar/:id', function(req, res) {
    var id = req.param('id');
    var collection = db.get('disciplina');
    collection.remove({ "id" : { $eq: id} },function (err,docs){
-        res.location("/disciplina");
-        res.redirect("/disciplina");
+        res.location("/diario-classe/disciplina");
+        res.redirect("/diario-classe/disciplina");
     });
 });
 
@@ -55,8 +55,8 @@ router.post('/salvar', function(req, res) {
             res.send("There was a problem adding the information to the database.");
         }
         else {
-            res.location("/disciplina");
-            res.redirect("/disciplina");
+            res.location("/diario-classe/disciplina");
+            res.redirect("/diario-classe/disciplina");
         }
     });
 });
@@ -77,8 +77,8 @@ router.post('/update', function(req, res) {
             res.send("There was a problem adding the information to the database.");
         }
         else {
-            res.location("/disciplina");
-            res.redirect("/disciplina");
+            res.location("/diario-classe/disciplina");
+            res.redirect("/diario-classe/disciplina");
         }
     });
 });

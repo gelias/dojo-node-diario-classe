@@ -33,9 +33,9 @@ app.use(function(req,res,next){
     next();
 });
 
-app.use('/', routes);
-app.use('/estudante', estudantes);
-app.use('/disciplina', disciplinas);
+app.use('/diario-classe', routes);
+app.use('/diario-classe/estudante', estudantes);
+app.use('/diario-classe/disciplina', disciplinas);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
