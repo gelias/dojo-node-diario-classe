@@ -1,4 +1,4 @@
-Diario-classe demo app usando NodeJS
+Diario-classe - Web App Demo usando NodeJS
 =======================
 
 Este projeto visa demonstar o uso de uma aplicação web usando [NodeJS](http://nodejs.org/), [Express]() e [MongoDB]()
