@@ -4,7 +4,7 @@ Diario-classe demo app usando NodeJS
 Este projeto visa demonstar o uso de uma aplicação web usando [NodeJS](http://nodejs.org/), [Express]() e [MongoDB]()
 
 
-Web App (rotas)
+Web App
 -------
 * Cadastro de Estudante `/diario-classe/estudante`
 * Cadastro de Disiciplinas `/diario-classe/disciplina`
