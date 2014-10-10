@@ -3,7 +3,7 @@ Diario-classe demo app usando NodeJS
 
 Este projeto visa demonstar o uso de uma aplicação web usando [NodeJS](http://nodejs.org/), [Express]() e [MongoDB]()
 
-
+Mo
 Web App
 -------
 * Cadastro de Estudante `/diario-classe/estudante`
@@ -52,7 +52,7 @@ Deletar Disciplina
 Resolver Dependências
 =====================
 
-O projeto usa [Node Package Manager npm]() como gerenciador de dependências. Para resolver as dependências entre basta procecer com os comandos abaixo:
+O projeto usa [Node Package Manager npm](https://www.npmjs.org/) como gerenciador de dependências. Para resolver as dependências entre basta procecer com os comandos abaixo:
   
   `cd dojo-node-diario-classe`
   `npm install`
@@ -60,7 +60,7 @@ O projeto usa [Node Package Manager npm]() como gerenciador de dependências. Pa
 Persistência
 ============
 
-O projeto usa [MongoDB]() onde no diretório root do projeto encontra-se a base de dados na pasta `data`. A estrutura das tabelas são representadas com os exemplos abaixo:
+O projeto usa [MongoDB](http://www.mongodb.org/) onde no diretório root do projeto encontra-se a base de dados na pasta `data`. A estrutura das tabelas são representadas com os exemplos abaixo:
 
 ### diario-classe.estudante ###
 
