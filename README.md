@@ -68,5 +68,5 @@ O projeto usa [MongoDB](http://www.mongodb.org/) onde no diretório root do proj
 
 ### diario-classe.disciplina ###
 
-`{ id: 1, nome: 'Java Web 3.0'` }
+`{ id: 1, nome: 'Java Web 3.0' }`
 
