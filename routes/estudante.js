@@ -28,11 +28,11 @@ router.get('/editar/:id', function(req, res) {
     });
 });
 
-router.get('/deletar/:estudante_id', function(req, res) {
+router.get('/deletar/:id', function(req, res) {
    var db = req.db;
-   var estudante_id = req.param('estudante_id');
+   var id = req.param('id');
    var collection = db.get('estudante');
-   collection.remove({ "id" : { $eq: estudante_id} },function (err,docs){
+   collection.remove({ "id" : { $eq: id} },function (err,docs){
         res.location("/estudante");
         res.redirect("/estudante");
     });

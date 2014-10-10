@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1= title
-    form#formAdicionarDisciplina(name="adicionardisciplina",method="post",action="/disciplina/salvar")
-        input#inputId(type="text", placeholder="id", name="id", value=)
-        input#inputNome(type="text", placeholder="nome", name="nome")
+    form#formAdicionarDisciplina(name="adicionardisciplina",method="post",action="#{action}")
+        input#inputId(type="text", placeholder="id", name="id", value="#{disciplina.id")
+        input#inputNome(type="text", placeholder="nome", name="nome", value="#{disciplina.nome}")
         button#btnSubmit(type="submit") submit

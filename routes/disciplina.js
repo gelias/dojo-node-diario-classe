@@ -13,18 +13,26 @@ router.get('/', function(req, res) {
 
 
 router.get('/adicionar', function(req, res) {
-    res.render('formDisciplina', { title: 'Adicionar Disciplina' });
+    var doc = {id:'',nome:''};
+    res.render('formDisciplina', { title: 'Adicionar Disciplina', 'disciplina': doc, 'action': '/disciplina/salvar' });
 });
 
-router.get('/editar', function(req, res) {
-    res.render('formDisciplina', { title: 'Adicionar Disciplina',  });
+router.get('/editar/:id', function(req, res) {
+    var db = req.db;
+    var collection = db.get('disciplina');
+    var id = req.params.id;
+    collection.find({ id: id } ,function (err,doc){
+        console.log(doc);
+        res.render('formDisciplina', 
+            { 'title': 'Editar Disciplina',  'disciplina' : doc[0], 'action': '/disciplina/update'});
+    });
 });
 
-router.get('/delete/:id', function(req, res) {
+router.get('/deletar/:id', function(req, res) {
    var db = req.db;
    var id = req.param('id');
    var collection = db.get('disciplina');
-   collection.remove({ id : id },function (err,docs){
+   collection.remove({ "id" : { $eq: id} },function (err,docs){
         res.location("/disciplina");
         res.redirect("/disciplina");
     });
@@ -33,30 +41,43 @@ router.get('/delete/:id', function(req, res) {
 
 router.post('/salvar', function(req, res) {
 
-    // Set our internal DB variable
     var db = req.db;
     var db = req.db;
-
-    // Get our form values. These rely on the "name" attributes
     var id = req.body.id;
     var nome = req.body.nome;
-
-    // Set our collection
     var collection = db.get('disciplina');
 
-    // Submit to the DB
     collection.insert({
         "id" : id,
         "nome" : nome
     }, function (err, doc) {
         if (err) {
-            // If it failed, return error
             res.send("There was a problem adding the information to the database.");
         }
         else {
-            // If it worked, set the header so the address bar doesn't still say /adduser
             res.location("/disciplina");
-            // And forward to success page
+            res.redirect("/disciplina");
+        }
+    });
+});
+
+router.post('/update', function(req, res) {
+
+    var db = req.db;
+    var db = req.db;
+    var id = req.body.id;
+    var nome = req.body.nome;
+    var collection = db.get('disciplina');
+
+    collection.update({ "id": id},{
+        "id" : id,
+        "nome" : nome
+    }, function (err, doc) {
+        if (err) {
+            res.send("There was a problem adding the information to the database.");
+        }
+        else {
+            res.location("/disciplina");
             res.redirect("/disciplina");
         }
     });
